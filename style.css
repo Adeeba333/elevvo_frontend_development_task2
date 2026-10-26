@@ -1,0 +1,171 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #eef2f7;
+  color: #1f2937;
+}
+
+main {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 24px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+  margin: 0 0 6px;
+}
+
+.intro,
+.note {
+  margin: 0 0 20px;
+  color: #6b7280;
+}
+
+fieldset {
+  margin: 0 0 20px;
+  padding: 16px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+}
+
+legend {
+  padding: 0 8px;
+  font-weight: bold;
+}
+
+.field {
+  margin-bottom: 16px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  font-family: inherit;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  background: #ffffff;
+}
+
+textarea {
+  resize: vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid #2563eb;
+  border-color: #2563eb;
+}
+
+.invalid {
+  border-color: #b91c1c !important;
+}
+
+small {
+  display: block;
+  margin-top: 4px;
+  color: #6b7280;
+}
+
+.error {
+  display: block;
+  min-height: 1.2em;
+  margin-top: 4px;
+  font-size: 0.85rem;
+  color: #b91c1c;
+}
+
+/* Radio and checkbox rows */
+.choice {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.choice input {
+  margin-top: 3px;
+}
+
+.choice label {
+  margin: 0;
+  font-weight: normal;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+button {
+  padding: 14px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ffffff;
+  background: #2563eb;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
+
+button.secondary {
+  color: #1f2937;
+  background: #e5e7eb;
+}
+
+button.secondary:hover {
+  background: #d1d5db;
+}
+
+.success {
+  margin: 16px 0 0;
+  padding: 12px;
+  color: #166534;
+  background: #dcfce7;
+  border-radius: 6px;
+  text-align: center;
+}
+
+/* Tablets and desktops */
+@media (min-width: 768px) {
+  body {
+    padding: 40px 16px;
+  }
+
+  main {
+    padding: 40px;
+  }
+
+  .buttons {
+    flex-direction: row;
+  }
+
+  .buttons button {
+    flex: 1;
+  }
+}
