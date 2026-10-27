@@ -1,55 +1,64 @@
-* {
-  box-sizing: border-box;
-}
+* {box-sizing: border-box;}
 
 body {
   margin: 0;
-  padding: 16px;
-  font-family: Arial, Helvetica, sans-serif;
-  background: #eef2f7;
-  color: #1f2937;
+  padding: 20px 15px;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(135deg, #dfeee0, #f0f9ff);
+  color: #1e293b;
+  line-height: 1.5;
 }
 
 main {
   max-width: 600px;
   margin: 0 auto;
-  padding: 24px;
-  background: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  padding: 25px 20px;
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(30, 41, 59, 0.12);
 }
 
 h1 {
-  margin: 0 0 6px;
+  margin: 0 0 5px;
+  font-size: 28px;
+  color: #038127;
+  text-align:center ;
 }
 
-.intro,
-.note {
+.intro {
   margin: 0 0 20px;
-  color: #6b7280;
+  color: #86b29b;
+}
+
+.note {
+  margin: 0 0 15px;
+  font-size: 14px;
+  color: #808987;
 }
 
 fieldset {
   margin: 0 0 20px;
-  padding: 16px;
-  border: 1px solid #cbd5e1;
-  border-radius: 8px;
+  padding: 18px 15px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background-color: #f8fafc;
 }
 
 legend {
   padding: 0 8px;
   font-weight: bold;
+  color: #3aa273;
 }
 
 .field {
-  margin-bottom: 16px;
+  margin-bottom: 18px;
 }
 
 label {
   display: block;
   margin-bottom: 6px;
-  font-weight: bold;
-  font-size: 0.95rem;
+  font-size: 15px;
+  font-weight: 600;
 }
 
 input[type="text"],
@@ -58,12 +67,13 @@ input[type="tel"],
 select,
 textarea {
   width: 100%;
-  padding: 12px;
-  font-size: 1rem;
+  padding: 12px 14px;
+  font-size: 16px;
   font-family: inherit;
+  color: #1e3b24;
+  background-color: white;
   border: 1px solid #cbd5e1;
-  border-radius: 6px;
-  background: #ffffff;
+  border-radius: 8px;
 }
 
 textarea {
@@ -73,99 +83,88 @@ textarea {
 input:focus,
 select:focus,
 textarea:focus {
-  outline: 2px solid #2563eb;
-  border-color: #2563eb;
+  outline: none;
+  border-color: #25eb81;
+  box-shadow: 0 0 0 3px rgba(37, 235, 146, 0.2);
 }
 
 .invalid {
-  border-color: #b91c1c !important;
+  border-color: #dc2626 !important;
+}
+
+.error {
+  display: block;
+  margin-top: 4px;
+  font-size: 14px;
+  color: #dc2626;
 }
 
 small {
   display: block;
   margin-top: 4px;
-  color: #6b7280;
+  font-size: 13px;
+  color: #86b29b;
 }
 
-.error {
-  display: block;
-  min-height: 1.2em;
-  margin-top: 4px;
-  font-size: 0.85rem;
-  color: #b91c1c;
-}
-
-/* Radio and checkbox rows */
 .choice {
   display: flex;
-  align-items: flex-start;
-  gap: 8px;
+  gap: 10px;
   margin-bottom: 8px;
 }
 
 .choice input {
-  margin-top: 3px;
-}
+  margin-top: 4px;}  
+  input[type="radio"],
+  input[type="checkbox"] {accent-color: #028632; }
 
 .choice label {
-  margin: 0;
+  margin-bottom: 0;
   font-weight: normal;
 }
 
-.buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-button {
+.buttons button {
+  display: block;
+  width: 100%;
+  margin-bottom: 12px;
   padding: 14px;
-  font-size: 1rem;
+  font-size: 16px;
   font-weight: bold;
-  color: #ffffff;
-  background: #2563eb;
+  color: white;
+  background-color: #08be42;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
 }
 
-button:hover {
-  background: #1d4ed8;
+.buttons button:hover {
+  background-color: #0ae972;
 }
 
-button.secondary {
-  color: #1f2937;
-  background: #e5e7eb;
+.buttons .secondary {
+  color: #335543;
+  background-color: #e2e8f0;
 }
 
-button.secondary:hover {
-  background: #d1d5db;
+.buttons .secondary:hover {
+  background-color: #cbd5e1;
 }
 
 .success {
-  margin: 16px 0 0;
+  margin-top: 15px;
   padding: 12px;
   color: #166534;
-  background: #dcfce7;
-  border-radius: 6px;
+  background-color: #dcfce7;
+  border-radius: 8px;
   text-align: center;
 }
 
-/* Tablets and desktops */
 @media (min-width: 768px) {
-  body {
-    padding: 40px 16px;
-  }
-
-  main {
-    padding: 40px;
-  }
-
+  body {  padding: 50px 20px;}
+  main {padding: 40px;}
+  h1 {font-size: 34px;}
   .buttons {
-    flex-direction: row;
-  }
+    display: flex;
+    gap: 12px;}
 
-  .buttons button {
-    flex: 1;
-  }
+  .buttons button {margin-bottom: 0;}
 }

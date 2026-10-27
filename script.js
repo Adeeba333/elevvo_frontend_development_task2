@@ -1,23 +1,24 @@
-const form = document.getElementById("contactForm");
+const form = document.querySelector("form");
 const successMsg = document.getElementById("successMsg");
-const fieldIds = ["name", "email", "phone", "subject", "message", "consent"];
 
-function showError(id, text) {
+function showError(id, message) {
   document.getElementById(id).classList.add("invalid");
-  document.getElementById(id + "Error").textContent = text;
+  document.getElementById(id + "Error").textContent = message;
 }
 
 function clearErrors() {
-  fieldIds.forEach(function (id) {
-    document.getElementById(id).classList.remove("invalid");
-    document.getElementById(id + "Error").textContent = "";
-  });
+  const ids = ["name", "email", "phone", "subject", "message", "consent"];
+
+  for (let i = 0; i < ids.length; i++) {
+    document.getElementById(ids[i]).classList.remove("invalid");
+    document.getElementById(ids[i] + "Error").textContent = "";
+  }
 }
 
 form.addEventListener("submit", function (event) {
-  event.preventDefault();
-  successMsg.hidden = true;
-  clearErrors();
+  event.preventDefault();       
+  successMsg.hidden = true;     
+  clearErrors();                
 
   const name = document.getElementById("name").value.trim();
   const email = document.getElementById("email").value.trim();
@@ -26,7 +27,7 @@ form.addEventListener("submit", function (event) {
   const message = document.getElementById("message").value.trim();
   const consent = document.getElementById("consent").checked;
 
-  let isValid = true;
+  let isValid = true;           
 
   if (name === "") {
     showError("name", "Please enter your full name.");
@@ -34,6 +35,7 @@ form.addEventListener("submit", function (event) {
   }
 
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
   if (email === "") {
     showError("email", "Please enter your email address.");
     isValid = false;
@@ -42,8 +44,9 @@ form.addEventListener("submit", function (event) {
     isValid = false;
   }
 
-  // Phone is optional, but if filled it must be 1 to 11 digits
-  if (phone !== "" && !/^[0-9]{1,11}$/.test(phone)) {
+  const phonePattern = /^[0-9]{1,11}$/;
+
+  if (phone !== "" && !phonePattern.test(phone)) {
     showError("phone", "Use digits only, up to 11 digits.");
     isValid = false;
   }
@@ -61,18 +64,17 @@ form.addEventListener("submit", function (event) {
     isValid = false;
   }
 
-  if (!consent) {
+  if (consent === false) {
     showError("consent", "Please tick the consent box to continue.");
     isValid = false;
   }
 
-  if (isValid) {
+  if (isValid === true) {
     successMsg.hidden = false;
     form.reset();
   }
 });
 
-// Clear the success message and errors when the form is reset
 form.addEventListener("reset", function () {
   clearErrors();
   successMsg.hidden = true;
